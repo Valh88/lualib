@@ -1,0 +1,9 @@
+.cursor
+.vscode
+package/backup
+*.o
+*.dll
+*.so
+*.a
+*.ppu
+*.exe
