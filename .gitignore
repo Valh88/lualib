@@ -7,3 +7,6 @@ package/backup
 *.a
 *.ppu
 *.exe
+GPATH
+GRTAGS
+GTAGS

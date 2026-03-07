@@ -334,7 +334,21 @@ lua_register(L, 'my_callback', @my_callback);
 
 ## 8. Использование в Lazarus (пакет lualib.lpk)
 
-Чтобы пользоваться привязками из **Lazarus** через пакет, не прописывая пути к `src` вручную:
+**Что нужно знать, чтобы пользоваться в Lazarus:**
+
+| Что | Замечание |
+|-----|------------|
+| **Где пакет** | Файл `package/lualib.lpk` в корне репозитория. Открывать именно его (Package → Open package file). |
+| **Сначала скомпилировать пакет** | В окне пакета нажать **Compile**, затем **Use** → **Install**. После Install пакет доступен во всех проектах. |
+| **Подключение к проекту** | Project → Project Inspector → Add → New requirement → выбрать **lualib**. |
+| **В коде** | `uses lua54, lauxlib54, lualib54;` (lualib54 — только для хоста; для DLL-модуля достаточно lua54, lauxlib54). |
+| **Библиотека Lua** | Рядом с вашим exe/DLL нужна **lua54.dll** (Windows) или **liblua.so.5.4** в PATH/LD_LIBRARY_PATH. Без неё приложение упадёт при загрузке. |
+| **DLL-модуль для Lua** | Создавать проект типа **Library**, экспортировать `luaopen_<имя>`. Имя DLL — как у модуля для `require()`. |
+| **Без установки в IDE** | Можно не нажимать Install: открыть lualib.lpk и в своём проекте добавить зависимость Add → Add required package → lualib. |
+
+Путь к пакету: Windows — например `d:\projects\pascal\lualib\package\lualib.lpk`, Linux — например `/home/user/lualib/package/lualib.lpk`. Относительные пути в .lpk (`..\src`) Lazarus обрабатывает на обеих ОС.
+
+Ниже — пошаговые шаги.
 
 ### 8.1. Установка пакета
 
