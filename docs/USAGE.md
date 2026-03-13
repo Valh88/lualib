@@ -345,6 +345,7 @@ lua_register(L, 'my_callback', @my_callback);
 | **Библиотека Lua** | Рядом с вашим exe/DLL нужна **lua54.dll** (Windows) или **liblua.so.5.4** в PATH/LD_LIBRARY_PATH. Без неё приложение упадёт при загрузке. |
 | **DLL-модуль для Lua** | Создавать проект типа **Library**, экспортировать `luaopen_<имя>`. Имя DLL — как у модуля для `require()`. |
 | **Без установки в IDE** | Можно не нажимать Install: открыть lualib.lpk и в своём проекте добавить зависимость Add → Add required package → lualib. |
+| **Скрипты сборки** | При работе из Lazarus скрипты **build.sh**, **build_run_lua.sh**, **build.cmd** и т.д. **не нужны** — сборка идёт через Run/Build в IDE. Скрипты имеют смысл для командной строки, CI или если не используете Lazarus. |
 
 Путь к пакету: Windows — например `d:\projects\pascal\lualib\package\lualib.lpk`, Linux — например `/home/user/lualib/package/lualib.lpk`. Относительные пути в .lpk (`..\src`) Lazarus обрабатывает на обеих ОС.
 

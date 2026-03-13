@@ -127,7 +127,7 @@ lua54 test_mymodule.lua
 
 ## Using from Lazarus
 
-Open **package/lualib.lpk** in Lazarus, then **Compile** and **Use** → **Install**. In your project: **Project** → **Project Inspector** → **Add** → **New requirement** → choose **lualib**. Then `uses lua54, lauxlib54, lualib54;` in code. See [docs/USAGE.md](docs/USAGE.md) §8.
+Open **package/lualib.lpk** in Lazarus, then **Compile** and **Use** → **Install**. In your project: **Project** → **Project Inspector** → **Add** → **New requirement** → choose **lualib**. Then `uses lua54, lauxlib54, lualib54;` in code. When using Lazarus, **no build scripts are needed** — use Run/Build in the IDE. See [docs/USAGE.md](docs/USAGE.md) §8.
 
 ## Embedding Lua in a Pascal program (host)
 

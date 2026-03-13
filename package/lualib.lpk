@@ -4,29 +4,34 @@
     <PathDelim Value="\"/>
     <Name Value="lualib"/>
     <Type Value="RunAndDesignTime"/>
-    <Description Value="Pascal bindings to Lua 5.4 C API (lua54, lauxlib54, lualib54). For C modules (DLL) and for embedding Lua in Pascal."/>
     <CompilerOptions>
       <Version Value="11"/>
       <PathDelim Value="\"/>
       <SearchPaths>
-        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\"/>
         <OtherUnitFiles Value="..\src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="3">
-      <Item1>
+    <Description Value="Pascal bindings to Lua 5.4 C API (lua54, lauxlib54, lualib54). For C modules (DLL) and for embedding Lua in Pascal."/>
+    <Files>
+      <Item>
         <Filename Value="..\src\lua54.pas"/>
         <UnitName Value="lua54"/>
-      </Item1>
-      <Item2>
+      </Item>
+      <Item>
         <Filename Value="..\src\lauxlib54.pas"/>
         <UnitName Value="lauxlib54"/>
-      </Item2>
-      <Item3>
+      </Item>
+      <Item>
         <Filename Value="..\src\lualib54.pas"/>
         <UnitName Value="lualib54"/>
-      </Item3>
+      </Item>
     </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+    </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>
     </UsageOptions>
